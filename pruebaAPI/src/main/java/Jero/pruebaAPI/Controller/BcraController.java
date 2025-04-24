@@ -34,10 +34,6 @@ public class BcraController {
         return bcraApiService.obtenerDatos()
                 .map(response -> response.results().isEmpty() ? null : response.results().get(0));
     }
-    @GetMapping("/java-home")
-    public String getJavaHome() {
-        return System.getProperty("java.home");
-    }
     @GetMapping("/alquiler-ajustado")
     public Mono<Double> getAlquilerAjustado(
             @RequestParam double alquilerBase,
